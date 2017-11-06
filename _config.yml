@@ -7,7 +7,7 @@ title: 前端
 subtitle:
 description:
 author: zhw
-language:
+language: zh-Hans
 timezone:
 
 # URL
@@ -78,5 +78,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/zhengxkq/blog.git
+  repo: https://github.com/zhengxkq/zhengxkq.github.com.git
   branch: master
