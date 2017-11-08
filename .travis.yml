@@ -19,9 +19,10 @@ before_script:
 script:
 - hexo clean && hexo g
 - gulp
+- git config user.name "zhengxkq"
+- git config user.email "zhengxkq@163.com"
 after_success: 
-after_script:
-- ./_travis.sh
+- hexo d
 branches:
   only:
   - master
