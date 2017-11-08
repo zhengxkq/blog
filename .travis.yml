@@ -25,6 +25,7 @@ before_script:
   - chmod +x _travis.sh  #授权脚本执行权限
 
 script:
+  - mkdir pulbic
   - hexo clean && hexo g #清除缓存并生成静态文件
   - gulp #执行gulp任务 
   - ./_travis.sh #执行部署脚本  
