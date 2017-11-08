@@ -27,7 +27,7 @@ function default(){
   git checkout master
   cd ../
 
-  mv .deploy_git/.git/ ./public/
+  #mv .deploy_git/.git/ ./public/
   cd ./public
 
 cat <<EOF >> README.md 
@@ -43,7 +43,7 @@ cat <<EOF >> README.md
 Job ID   | $TRAVIS_JOB_ID | 
 Job NUM  | $TRAVIS_JOB_NUMBER | 
 EOF
-
+  git init
   git config user.name "zhengxkq"
   git config user.email "zhengxkq@163.com"
   git add .
