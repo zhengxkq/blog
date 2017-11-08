@@ -25,9 +25,6 @@ function default(){
   cd .deploy_git
 
   git checkout master
-  cd ../
-
-
 
 cat <<EOF >> README.md 
 部署状态 | 集成结果 | 参考值
