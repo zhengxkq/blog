@@ -27,8 +27,7 @@ function default(){
   git checkout master
   cd ../
 
-  mv .deploy_git/.git/ ./public/
-  cd ./public
+
 
 cat <<EOF >> README.md 
 部署状态 | 集成结果 | 参考值
