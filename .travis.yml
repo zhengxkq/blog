@@ -15,13 +15,13 @@ install:
 before_script:
 - export TZ='Asia/Shanghai'
 - npm install -g gulp
-- chmod +x _travis.sh
+- git config user.name "zhengxkq"
+- git config user.email "zhengxkq@163.com"
+- sed -i'' "s~git@github.com:zhengxkq/zhengxkq.github.com.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/zhengxkq/zhengxkq.github.com.git~" _config.yml
 script:
 - hexo clean && hexo g
 - gulp
-- git config user.name "zhengxkq"
-- git config user.email "zhengxkq@163.com"
-after_success: 
+after_success:
 - hexo d
 branches:
   only:
