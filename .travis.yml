@@ -7,7 +7,7 @@ cache:
 notifications:
   email:
     recipients:
-    - snippet@91h5.cc
+    - zhwxkq@163.com
     on_success: never
     on_failure: always
 install:
@@ -16,7 +16,6 @@ before_script:
 - export TZ='Asia/Shanghai'
 - npm install -g gulp
 - chmod +x _travis.sh
-- npm install -g hexo-cli
 script:
 - hexo clean && hexo g
 - gulp
