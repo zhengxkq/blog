@@ -27,7 +27,7 @@ before_script:
 script:
   - mkdir pulbic
   - hexo clean && hexo g #清除缓存并生成静态文件
-  - gulp #执行gulp任务 
+  # - gulp #执行gulp任务 
 after_success: #实行成功时(以后扩展功能使用)
 
 after_script:
