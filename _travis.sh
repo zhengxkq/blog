@@ -43,6 +43,9 @@ cat <<EOF >> README.md
 Job ID   | $TRAVIS_JOB_ID | 
 Job NUM  | $TRAVIS_JOB_NUMBER | 
 EOF
+  pwd
+  ls -ad
+  cat index.html
   git init
   git config user.name "zhengxkq"
   git config user.email "zhengxkq@163.com"
