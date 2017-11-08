@@ -38,8 +38,6 @@ cat <<EOF >> README.md
 Job ID   | $TRAVIS_JOB_ID | 
 Job NUM  | $TRAVIS_JOB_NUMBER | 
 EOF
-  cd .deploy_git
-  pwd
   git config user.name "zhengxkq"
   git config user.email "zhengxkq@163.com"
   git add .
