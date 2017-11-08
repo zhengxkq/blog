@@ -27,7 +27,7 @@ function default(){
   git checkout master
   cd ../
 
-  #mv .deploy_git/.git/ ./public/
+  mv .deploy_git/.git/ ./public/
   cd ./public
 
 cat <<EOF >> README.md 
