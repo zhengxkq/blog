@@ -48,10 +48,10 @@ notification: |-
 social:
  - name: Github
    icon: git
-   href: //github.com/shenliyang
+   href: //github.com/zhengxkq
  - name: 邮箱
    icon: envelope-o
-   href: mailto:snippet@91h5.cc
+   href: mailto:zhengxkq@163.com
  - name: 联系QQ
    icon: qq
    href: /
@@ -78,7 +78,7 @@ arch_config:
 
 ## 友链设置
 links:
-  - 个人博客: http://www.shenliyang.com
+  - 个人博客: https://zhengxkq.github.io/
 
 
 

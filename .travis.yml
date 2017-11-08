@@ -28,11 +28,10 @@ script:
   - mkdir pulbic
   - hexo clean && hexo g #清除缓存并生成静态文件
   - gulp #执行gulp任务 
-  - ./_travis.sh #执行部署脚本  
 after_success: #实行成功时(以后扩展功能使用)
 
 after_script:
-  # - ./_travis.sh #执行部署脚本
+  - ./_travis.sh #执行部署脚本
 # E: Build LifeCycle
 
 branches:
