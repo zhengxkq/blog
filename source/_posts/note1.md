@@ -1,5 +1,5 @@
 ---
-title: 纯css实现自适应布局表格2
+title: 纯css实现自适应布局表格
 date: {{date}}
 categories: 前端
 tags: 前端

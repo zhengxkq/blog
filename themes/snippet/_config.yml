@@ -139,8 +139,8 @@ gitment:
 
 ### 友言评论
 uyan:
-  enable: true
-  uyan_id: 1966422
+  enable: false
+  uyan_id: 
 
 
 ## 网站访问统计
