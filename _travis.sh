@@ -25,7 +25,6 @@ function default(){
   cd .deploy_git
 
   git checkout master
-
 cat <<EOF >> README.md 
 部署状态 | 集成结果 | 参考值
 ---|---|---
@@ -39,7 +38,8 @@ cat <<EOF >> README.md
 Job ID   | $TRAVIS_JOB_ID | 
 Job NUM  | $TRAVIS_JOB_NUMBER | 
 EOF
-
+  cd .deploy_git
+  pwd
   git config user.name "zhengxkq"
   git config user.email "zhengxkq@163.com"
   git add .
