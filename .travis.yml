@@ -1,0 +1,33 @@
+language: node_js
+node_js: stable
+sudo: false
+cache:
+  directories:
+  - node_modules
+notifications:
+  email:
+    recipients:
+    - zhwxkq@163.com
+    on_success: never
+    on_failure: always
+before_install:
+- export TZ='Asia/Shanghai'  
+- npm install -g hexo
+- npm install -g hexo-cli 
+install:
+- npm install
+before_script:
+- export TZ='Asia/Shanghai'
+- git config user.name "zhengxkq"
+- git config user.email "zhengxkq@163.com"
+- sed -i'' "s~git@github.com:zhengxkq/zhengxkq.github.com.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/zhengxkq/zhengxkq.github.com.git~" _config.yml
+script:
+- hexo clean && hexo g
+after_success:
+- hexo d
+branches:
+  only:
+  - master
+env:
+  global:
+  - secure: XXGzEdn6iCnYJfUABIWsJno6dHSJlRRKKhjkV186j4Ie6uHHLCMo35OsnL/YALmtrwFersj9kLgA8HaVNgOitW3JUzgx1EW6bC54VgiHqMyPKWuJzSn59VIq+xutxg2xDDiLIJ3uoDHY9TYxr4C5aE2oSABfUaEqTu7ALcDk8Xy/ODdTkfZSIUGcf+KkPTevjU42Bt+K16ReIehfjSaK9ZXqkaiKKDPFvNCObA7jiO87VuSaxKBx0W5VG4hLCFzBi8Ww0dMbkIrLtZ2U6bEpP2MDc7n7OzMwjRm7tGeBw0ZUtDieexIq/Jcp60vxyuQ9UGayW7AZTULadOoK18XZgZPnQdHc99FFHiOc6/pqrZsTXUuHJX//8US53mn+qJLAqB2kb39sW5NSBH6sCd1U/3QnnJAJTl8ma0z8hiCSUPm5Qsbh0poCtgqdxKGFketthzUwMxyl81Kq+nMM4LJQYpFOP4PrAGz2OmAwtrDK89XpN7vaH7bxf2kn4gEQSXUP17te6vNL1XPqmE0R3B3t9oGRTrw22TlV9YLOBaO5GQAeTn42QjcJQnSLTctMeeB0XRPwJHeL5ZpjQpmvTAr905DGcFXhM7wjsKr3NtOeF1RxwVJCGSroTI+wQnXccVCEXDb/GOw73dHozYByN00beDALlMBSgdKDGzhauWRve3c=

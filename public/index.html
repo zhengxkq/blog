@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="前端">
+<meta property="og:url" content="http://www.front-end.wang/index.html">
+<meta property="og:site_name" content="前端">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端">
+  
+    <link rel="alternate" href="/atom.xml" title="前端" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">前端</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://www.front-end.wang"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-css" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/css/" class="article-date">
+  <time datetime="2017-11-08T01:38:18.000Z" itemprop="datePublished">2017-11-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/css/">css鲜为人知的属性3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="pointer-events"><a href="#pointer-events" class="headerlink" title="pointer-events"></a>pointer-events</h1><h5 id="属性：auto-none-visiblepainted-visiblefill-visiblestroke-visible-painted-fill-stroke-all"><a href="#属性：auto-none-visiblepainted-visiblefill-visiblestroke-visible-painted-fill-stroke-all" class="headerlink" title="属性：auto | none | visiblepainted | visiblefill | visiblestroke | visible | painted | fill | stroke | all"></a>属性：auto | none | visiblepainted | visiblefill | visiblestroke | visible | painted | fill | stroke | all</h5><h5 id="默认值：auto"><a href="#默认值：auto" class="headerlink" title="默认值：auto"></a>默认值：auto</h5><h5 id="取值："><a href="#取值：" class="headerlink" title="取值："></a>取值：</h5><ol>
+<li>auto：与pointer-events属性未指定时的表现效果相同。在svg内容上与visiblepainted值相同</li>
+<li>none：元素永远不会成为鼠标事件的target。但是，当其后代元素的pointer-events属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶触发父元素的事件侦听器。</li>
+<li>++其他值只能应用在SVG上。++</li>
+</ol>
+<h5 id="说明：设置或检索在何时成为属性事件的target。"><a href="#说明：设置或检索在何时成为属性事件的target。" class="headerlink" title="说明：设置或检索在何时成为属性事件的target。"></a>说明：设置或检索在何时成为属性事件的target。</h5><p>使用pointer-events来阻止元素成为鼠标事件目标不一定意味着元素上的事件侦听器永不会触发。如果元素后代明确指定了pointer-events属性并允许其成为鼠标事件的目标，那么指向该元素的任何事件在事件传播过程中都将通过父元素，并以适当的方式触发其上的事件侦听器。当然位于屏幕上在父元素上但不在后代元素上的鼠标活动都不会被父元素和后代元素捕获（将会穿过父元素而指向位于其下面的元素）。</p>
+<p>对应的脚本特性为pointerEvents。</p>
+<hr>
+<h1 id="attr"><a href="#attr" class="headerlink" title="attr"></a>attr</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[data-unit]:after&#123;</div><div class="line">    content:attr(data-unit);</div><div class="line">    color:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p data-unit=&quot;元&quot;&gt;余额3&lt;/p&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zhangtingqian/img/master/yu.png" alt="效果"></p>
+<hr>
+<h1 id="currentColor"><a href="#currentColor" class="headerlink" title="currentColor"></a>currentColor</h1><blockquote>
+<p>是clolr属性的值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 100px;</div><div class="line">    height: 100px;</div><div class="line">    color: red;</div><div class="line">    border: 1px solid currentColor;</div><div class="line">    //border: 1px solid;和currentColor效果一样，都是color的值；</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box&quot;&gt;测试&lt;/div&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="user-select"><a href="#user-select" class="headerlink" title="user-select"></a>user-select</h1><blockquote>
+<p>禁止选择文本</p>
+</blockquote>
+<hr>
+<h1 id="selection"><a href="#selection" class="headerlink" title="::selection"></a>::selection</h1><blockquote>
+<p>可设置文字被选择时的样式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box1::selection&#123;</div><div class="line">            background: red;</div><div class="line">            color: yellow;</div><div class="line">        &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;box1&quot;&gt;测试&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zhangtingqian/img/master/1.png" alt="默认效果"><img src="https://raw.githubusercontent.com/zhangtingqian/img/master/1-1.png" alt="选中效果"></p>
+<hr>
+<h1 id="image-set"><a href="#image-set" class="headerlink" title="image-set()"></a>image-set()</h1><blockquote>
+<p>可以根据用户设备的分辨率匹配合适的图像。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">	background-image: image-set( &quot;test.png&quot; 1x, &quot;test-2x.png&quot; 2x, &quot;test-print.png&quot; 600dpi );</div><div class="line">&#125;</div><div class="line">//上述代码将会为普通屏幕使用 test.png，为高分屏使用 test-2x.png，如果更高的分辨率则使用 test-print.png，比如印刷。</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="object-fit"><a href="#object-fit" class="headerlink" title="object-fit"></a>object-fit</h1><blockquote>
+<p>解决图片变形问题</p>
+<h5 id="属性-fill-contain-cover-none-scale-down-inherit-initial-unset"><a href="#属性-fill-contain-cover-none-scale-down-inherit-initial-unset" class="headerlink" title="属性:fill / contain / cover / none / scale-down / inherit / initial / unset"></a>属性:fill / contain / cover / none / scale-down / inherit / initial / unset</h5><h5 id="默认值：fill"><a href="#默认值：fill" class="headerlink" title="默认值：fill;"></a>默认值：fill;</h5><ol>
+<li>fill: 中文释义“填充”。默认值。替换内容拉伸填满整个content box, 不保证保持原有的比例。</li>
+<li>contain: 中文释义“包含”。保持原有尺寸比例。保证替换内容尺寸一定可以在容器里面放得下。因此，此参数可能会在容器内留下空白。</li>
+<li>cover: 中文释义“覆盖”。保持原有尺寸比例。保证替换内容尺寸一定大于容器尺寸，宽度和高度至少有一个和容器一致。因此，此参数可能会让替换内容（如图片）部分区域不可见。</li>
+<li>none: 中文释义“无”。保持原有尺寸比例。同时保持替换内容原始尺寸大小。</li>
+<li>scale-down: 中文释义“降低”。就好像依次设置了none或contain, 最终呈现的是尺寸比较小的那个。</li>
+</ol>
+</blockquote>
+<hr>
+<h1 id="object-position"><a href="#object-position" class="headerlink" title="object-position"></a>object-position</h1><blockquote>
+<p>控制图片的显示位置</p>
+<h5 id="默认值：50-50-居中"><a href="#默认值：50-50-居中" class="headerlink" title="默认值：50% 50%;(居中)"></a>默认值：50% 50%;(居中)</h5></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//支持如下写法</div><div class="line">object-position: 100% 100%;</div><div class="line">object-position: right 20px bottom 10px;</div><div class="line">object-position: calc(100% - 20px) calc(100% - 10px);</div></pre></td></tr></table></figure>
+<p><a href="http://www.zhangxinxu.com/study/201503/css3-object-position-object-fit-img-sprites.html" target="_blank" rel="external">object-position/object-fit img sprites与数字翻动demo</a></p>
+<hr>
+<h1 id="contain"><a href="#contain" class="headerlink" title="contain"></a>contain</h1><blockquote>
+<p>性能优化新属性</p>
+<h5 id="属性：none-strict-layout-style-paint-size-contain"><a href="#属性：none-strict-layout-style-paint-size-contain" class="headerlink" title="属性：none | strict | layout | style | paint | size | contain"></a>属性：none | strict | layout | style | paint | size | contain</h5><h5 id="属性值的解释："><a href="#属性值的解释：" class="headerlink" title="属性值的解释："></a>属性值的解释：</h5><ul>
+<li>none 无</li>
+<li>layout 开启布局限制</li>
+<li>style 开启样式限制</li>
+<li>paint 开启渲染限制</li>
+<li>size 开启size限制</li>
+<li>content 开启除了size外的所有限制</li>
+<li>strict开启 layout, style 和 paint 三种限制组合<h5 id="使用场景：以将一个元素标志为和页面上其它元素是相对独立的元素；"><a href="#使用场景：以将一个元素标志为和页面上其它元素是相对独立的元素；" class="headerlink" title="使用场景：以将一个元素标志为和页面上其它元素是相对独立的元素；"></a>使用场景：以将一个元素标志为和页面上其它元素是相对独立的元素；</h5><h5 id="栗子："><a href="#栗子：" class="headerlink" title="栗子："></a>栗子：</h5><h6 id="a-页面小饰件-widgets"><a href="#a-页面小饰件-widgets" class="headerlink" title="a.页面小饰件(widgets)"></a>a.页面小饰件(widgets)</h6>通常在页面上添加第三方小饰件时，我们几乎对它们没有什么太多的控制，比如分享工具，它们可能会因为具有相当耗资源的布局、样式、渲染操作等大幅度的降低整个页面的执行效率。为了将它们同我们的网站隔离开来，使用 contain: strict; 将第三方的小饰件同页面上的其它内容隔离开来。<h6 id="b-屏幕外的内容"><a href="#b-屏幕外的内容" class="headerlink" title="b.屏幕外的内容"></a>b.屏幕外的内容</h6>如果你有一个导航栏或其它类似的东西并不在屏幕可现实范围内出现，浏览器同样会为这些不可见的元素进行渲染。通过使用 contain: paint; 浏览器就会忽略渲染这些屏幕外不可见的元素，从而能更快的渲染其它内容。<h6 id="c-计算容器尺寸"><a href="#c-计算容器尺寸" class="headerlink" title="c.计算容器尺寸"></a>c.计算容器尺寸</h6>我在文字开头提到过这个问题，使用 contain: strict; 可以 免去很多关于容器尺寸控制的问题。比如，子元素的内容会影响容器的大小，使用 contain 属性就可以避免这样的问题产生。</li>
+</ul>
+</blockquote>
+<h6 id="为什么浏览器不能自动的实现-contain-的功能"><a href="#为什么浏览器不能自动的实现-contain-的功能" class="headerlink" title="为什么浏览器不能自动的实现 contain 的功能"></a><em>为什么浏览器不能自动的实现 contain 的功能</em></h6><p>浏览器已经尽可能的在页面下做了最大的优化，但每个浏览器引擎的实现方法并不尽相同。而 contain 属性可以提供一种标准的方式让开发人员告诉 浏览器 某些方面可以这样优化，哪些不能优化。</p>
+<h6 id="什么时候应该使用contain"><a href="#什么时候应该使用contain" class="headerlink" title="什么时候应该使用contain"></a><em>什么时候应该使用contain</em></h6><p>如果你的页面很简单，没有复杂的DOM节点和小饰件(widgets)，那就没必要考虑使用这种CSS的contain技术。而如果你开发的页面非常复杂，那么，这个CSS的contain技术可以帮助你优化页面的性能。而对于第三方的小饰件，始终使用contain: strict;是很好的习惯，它可以保护你的页面不受它们的干扰而出现性能问题。</p>
+<hr>
+<h1 id="text-transform"><a href="#text-transform" class="headerlink" title="text-transform"></a>text-transform</h1><blockquote>
+<p>控制文本中的字母</p>
+<h5 id="属性：none-capitalize（每个单词以大写字母开头）-uppercase-仅有大写字母-lowercase（仅有小写字母）-inherit"><a href="#属性：none-capitalize（每个单词以大写字母开头）-uppercase-仅有大写字母-lowercase（仅有小写字母）-inherit" class="headerlink" title="属性：none | capitalize（每个单词以大写字母开头） | uppercase(仅有大写字母) | lowercase（仅有小写字母） | inherit"></a>属性：none | capitalize（每个单词以大写字母开头） | uppercase(仅有大写字母) | lowercase（仅有小写字母） | inherit</h5></blockquote>
+<hr>
+<h1 id="direction"><a href="#direction" class="headerlink" title="direction"></a>direction</h1><blockquote>
+<p>定文本书写方向(个人理解和text-align:left/right;差不多)</p>
+<h5 id="属性：ltr-靠左-rtl-靠右-inherit"><a href="#属性：ltr-靠左-rtl-靠右-inherit" class="headerlink" title="属性：ltr(靠左) | rtl(靠右) | inherit"></a>属性：ltr(靠左) | rtl(靠右) | inherit</h5></blockquote>
+<hr>
+<h1 id="position-sticky；"><a href="#position-sticky；" class="headerlink" title="position:sticky；"></a>position:sticky；</h1><blockquote>
+<p>表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative;而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。<strong>有兼容性</strong>。</p>
+<h5 id="自己js实现："><a href="#自己js实现：" class="headerlink" title="自己js实现："></a>自己js实现：</h5></blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">    width: 100%;</div><div class="line">    height: 100px;</div><div class="line">    background: pink;</div><div class="line">    text-align: center;</div><div class="line">    //position:sticky; top: 0; 不写js加这个也可实现</div><div class="line">&#125;</div><div class="line">.sticky&#123;</div><div class="line">    position: fixed;</div><div class="line">    top: 0;</div><div class="line">&#125;</div><div class="line">.bottom&#123;</div><div class="line">    height: 2000px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;p style=&quot;margin-bottom: 100px&quot;&gt;&lt;/p&gt;</div><div class="line">&lt;div class=&quot;box&quot;&gt;测试盒子&lt;/div&gt;</div><div class="line">&lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var box=document.querySelector(&apos;.box&apos;);</div><div class="line">    var offsetY=box.offsetTop;</div><div class="line">    console.log(offsetY)</div><div class="line">    document.addEventListener(&apos;scroll&apos;,function () &#123;</div><div class="line">        window.scrollY&gt;offsetY?box.classList.add(&apos;sticky&apos;):box.classList.remove(&apos;sticky&apos;);</div><div class="line">    &#125;)</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="多列属性"><a href="#多列属性" class="headerlink" title="多列属性"></a>多列属性</h3><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>column-count</td>
+<td>规定元素应该被分隔的列数。</td>
+</tr>
+<tr>
+<td>column-fill</td>
+<td>规定如何填充列。</td>
+</tr>
+<tr>
+<td>column-gap</td>
+<td>规定列之间的间隔。</td>
+</tr>
+<tr>
+<td>column-rule</td>
+<td>设置所有 column-rule-* 属性的简写属性。</td>
+</tr>
+<tr>
+<td>column-rule-color</td>
+<td>规定列之间规则的颜色。</td>
+</tr>
+<tr>
+<td>column-rule-style</td>
+<td>规定列之间规则的样式。</td>
+</tr>
+<tr>
+<td>column-rule-width</td>
+<td>规定列之间规则的宽度。</td>
+</tr>
+<tr>
+<td>column-span</td>
+<td>规定元素应该横跨的列数。</td>
+</tr>
+<tr>
+<td>column-width</td>
+<td>规定列的宽度。</td>
+</tr>
+<tr>
+<td>columns</td>
+<td>规定设置 column-width 和 column-count 的简写属性。</td>
+</tr>
+</tbody>
+</table>
+<p>====</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.front-end.wang/2017/11/08/css/" data-id="cj9qqddwy0000jhljyh4dwp6m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-note1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/11/08/note1/" class="article-date">
+  <time datetime="2017-11-08T01:38:18.000Z" itemprop="datePublished">2017-11-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/08/note1/">纯css实现自适应布局表格</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这种布局的特点是使用CSS媒体查询语句(@media screen and (…) )，能根据页面宽度，让页面布局自动做相应的调整，而不是采用传统的做法，几种不同的尺寸就做几个相适应的页面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">       font-family: arial;</div><div class="line">   &#125;</div><div class="line">   table &#123;</div><div class="line">       border: 1px solid #ccc;</div><div class="line">       width: 80%;</div><div class="line">       margin:0;</div><div class="line">       padding:0;</div><div class="line">       border-collapse: collapse;</div><div class="line">       border-spacing: 0;</div><div class="line">       margin: 0 auto;</div><div class="line">   &#125;</div><div class="line">   table tr &#123;</div><div class="line">       border: 1px solid #ddd;</div><div class="line">       padding: 5px;</div><div class="line">   &#125;</div><div class="line">   table th, table td &#123;</div><div class="line">       padding: 10px;</div><div class="line">       text-align: center;</div><div class="line">   &#125;</div><div class="line">   table th &#123;</div><div class="line">       text-transform: uppercase;</div><div class="line">       font-size: 14px;</div><div class="line">       letter-spacing: 1px;</div><div class="line">   &#125;</div><div class="line">   @media screen and (max-width: 600px) &#123;</div><div class="line">       table &#123;</div><div class="line">           border: 0;</div><div class="line">       &#125;</div><div class="line">       table thead &#123;</div><div class="line">           display: none;</div><div class="line">       &#125;</div><div class="line">       table tr &#123;</div><div class="line">           margin-bottom: 10px;</div><div class="line">           display: block;</div><div class="line">           border-bottom: 2px solid #ddd;</div><div class="line">       &#125;</div><div class="line">       table td &#123;</div><div class="line">           display: block;</div><div class="line">           text-align: right;</div><div class="line">           font-size: 13px;</div><div class="line">           border-bottom: 1px dotted #ccc;</div><div class="line">       &#125;</div><div class="line">       table td:last-child &#123;</div><div class="line">           border-bottom: 0;</div><div class="line">       &#125;</div><div class="line">       table td:before &#123;</div><div class="line">           content: attr(data-label);</div><div class="line">           float: left;</div><div class="line">           text-transform: uppercase;</div><div class="line">           font-weight: bold;</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;table&gt;</div><div class="line">    &lt;thead&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;th&gt;支付&lt;/th&gt;</div><div class="line">        &lt;th&gt;日期&lt;/th&gt;</div><div class="line">        &lt;th&gt;金额&lt;/th&gt;</div><div class="line">        &lt;th&gt;周期&lt;/th&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;/thead&gt;</div><div class="line">    &lt;tbody&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td data-label=&quot;支付&quot;&gt;支付 #1&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;日期&quot;&gt;02/01/2015&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;金额&quot;&gt;$2,311&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;周期&quot;&gt;01/01/2015 - 01/31/2015&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">        &lt;td data-label=&quot;支付&quot;&gt;支付 #2&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;日期&quot;&gt;03/01/2015&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;金额&quot;&gt;$3,211&lt;/td&gt;</div><div class="line">        &lt;td data-label=&quot;周期&quot;&gt;02/01/2015 - 02/28/2015&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;/tbody&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/zhangtingqian/img/master/2.png" alt="pc端效果"><br><img src="https://raw.githubusercontent.com/zhangtingqian/img/master/2-2.png" alt="小于600px的屏效果"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://www.front-end.wang/2017/11/08/note1/" data-id="cj9qqddxa0001jhljty1833wu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/前端/" style="font-size: 10px;">前端</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">November 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/08/css/">css鲜为人知的属性3</a>
+          </li>
+        
+          <li>
+            <a href="/2017/11/08/note1/">纯css实现自适应布局表格</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 zhw<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+  <script src="https://apps.bdimg.com/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript">
+  if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/js/jquery-2.0.3.min.js' type='text/javascript'%3E%3C/script%3E"));
+  }
+  </script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
