@@ -10,18 +10,20 @@ notifications:
     - zhwxkq@163.com
     on_success: never
     on_failure: always
+before_install:
+- export TZ='Asia/Shanghai'  
+- npm install -g hexo
+- npm install -g hexo-cli 
 install:
 - npm install
 before_script:
 - export TZ='Asia/Shanghai'
-- npm install -g gulp
 - git config user.name "zhengxkq"
 - git config user.email "zhengxkq@163.com"
 - sed -i'' "s~git@github.com:zhengxkq/zhengxkq.github.com.git~https://${REPO_TOKEN}:x-oauth-basic@github.com/zhengxkq/zhengxkq.github.com.git~"
   _config.yml
 script:
 - hexo clean && hexo g
-- gulp
 after_success:
 - hexo d
 branches:
