@@ -16,6 +16,7 @@ before_script:
 - export TZ='Asia/Shanghai'
 - npm install -g gulp
 - chmod +x _travis.sh
+- npm install -g hexo-cli
 script:
 - hexo clean && hexo g
 - gulp
