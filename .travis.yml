@@ -1,48 +1,31 @@
 language: node_js
 node_js: stable
-
-sudo: false 
-
-#cache
+sudo: false
 cache:
   directories:
-    - "node_modules"
-
+  - node_modules
 notifications:
   email:
     recipients:
-      - snippet@91h5.cc
+    - snippet@91h5.cc
     on_success: never
     on_failure: always
-
-# S: Build Lifecycle
 install:
-  - npm install
-#  - gem install travis
-#  - travis login --pro --github-token ${GH_TOKEN}
-
+- npm install
 before_script:
-  - export TZ='Asia/Shanghai'
-  - npm install -g gulp 
-  - chmod +x _travis.sh
-
+- export TZ='Asia/Shanghai'
+- npm install -g gulp
+- chmod +x _travis.sh
 script:
-  - hexo clean && hexo g
-  - gulp 
-
-after_success:
- # - LAST_BUILD_NUMBER=68
- # - for i in $(seq 1 $LAST_BUILD_NUMBER ); do  travis logs $i --delete --force ; done
-
+- hexo clean && hexo g
+- gulp
+after_success: 
 after_script:
-  - ./_travis.sh
-
-# E: Build LifeCycle
-
+- ./_travis.sh
 branches:
   only:
-    - dev
+  - dev
 env:
- global:
-   - GH_REF: github.com/zhengxkq/zhengxkq.github.com
-
+  global:
+  - GH_REF: github.com/zhengxkq/zhengxkq.github.com
+  - secure: axiHfw0fpBeNLUspFhzgxFaUS/yiY4ufFztj7La3SO2NKwgjEQlJYtCCbOA8lQc4pEQi6vzihuNmJ+WhNydaUVZ1eQycaCqwLiUcHjFGV5Mre1eP3S3ZLFqj424mToXI44tfXdeb1nWVkF8SHSWbB8D17AGZ9qkNrf/kBd+Q2CNA0mry44Q6YAGZJSnQj3HZkrS3IwjH4bwph9vBzM8YhBBxziCbyw68fLEpLQRcGvs39rzkPKLglAYHz8H2WjQIAqD3VOpk2CEqGFq/r5FCN1zo2pIciw2ZEnl6f1QG5iBQUVXlIoQO8Bble68sB1aylBQgeXlRNWx5369tbIg19IrhbPRNqxeBIDJ0WjI1lpl4cZbKTt112RhwZDe411nQLhcytadVk+IgTVq7yKLkF7FvH9KoLrFbc+3N37DYY4z/Fy3HkgLgrAaOQ93csg90wH9CQm3zINhIMk42qqPf1PNumxgHroExiSLMtml7U0o1AvQai/4AXIyruO1bvXNwEbvggpKcLbYoegk81oFOUZoB9NFkV68TVkFF9BombC89cNyyTWExGQLgbyq49akVNgLBu+lz8L4VEWwKGdItyLaHN0yb3r+m4NnVtB/Wi+hTPBIWbcAivhS5ao/rnwI+EQkpM/OmAmpfHGG1BDyh0n3ys1ZajmJ7EjCuPdrBsRI=
