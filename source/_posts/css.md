@@ -12,7 +12,7 @@ tags: 前端
 #####  取值：
 1. auto：与pointer-events属性未指定时的表现效果相同。在svg内容上与visiblepainted值相同
 2. none：元素永远不会成为鼠标事件的target。但是，当其后代元素的pointer-events属性指定其他值时，鼠标事件可以指向后代元素，在这种情况下，鼠标事件将在捕获或冒泡阶触发父元素的事件侦听器。
-3. ++其他值只能应用在SVG上。++
+3. ***其他值只能应用在SVG上。***
 
 ##### 说明：设置或检索在何时成为属性事件的target。
 使用pointer-events来阻止元素成为鼠标事件目标不一定意味着元素上的事件侦听器永不会触发。如果元素后代明确指定了pointer-events属性并允许其成为鼠标事件的目标，那么指向该元素的任何事件在事件传播过程中都将通过父元素，并以适当的方式触发其上的事件侦听器。当然位于屏幕上在父元素上但不在后代元素上的鼠标活动都不会被父元素和后代元素捕获（将会穿过父元素而指向位于其下面的元素）。
@@ -31,6 +31,7 @@ tags: 前端
 ```
 <p data-unit="元">余额3</p>
 ```
+###### 效果
 
 ![效果](https://raw.githubusercontent.com/zhangtingqian/img/master/yu.png)
 
@@ -38,7 +39,7 @@ tags: 前端
 # currentColor 
 > 是clolr属性的值
 
-
+###### CSS
 ```
 .box{
     width: 100px;
@@ -48,6 +49,7 @@ tags: 前端
     //border: 1px solid;和currentColor效果一样，都是color的值；
 }
 ```
+###### HTML
 ```
 <div class="box">测试</div>
 ```
@@ -59,6 +61,7 @@ tags: 前端
 ---
 # ::selection
 > 可设置文字被选择时的样式
+###### CSS
 
 ```
 .box1::selection{
@@ -66,12 +69,15 @@ tags: 前端
             color: yellow;
         }
 ```
-
+###### HTML
 ```
 <div class="box1">测试</div>
 ```
+###### 默认效果
 
-![默认效果](https://raw.githubusercontent.com/zhangtingqian/img/master/1.png)![选中效果](https://raw.githubusercontent.com/zhangtingqian/img/master/1-1.png)
+![默认效果](https://raw.githubusercontent.com/zhangtingqian/img/master/1.png)
+###### 选中效果
+![选中效果](https://raw.githubusercontent.com/zhangtingqian/img/master/1-1.png)
 
 ---
 # image-set() 
@@ -88,8 +94,12 @@ div {
 
 # object-fit
 > 解决图片变形问题
+
 ##### 属性:fill / contain / cover / none / scale-down / inherit / initial / unset
+
 ##### 默认值：fill;
+
+##### 属性说明：
 1. fill: 中文释义“填充”。默认值。替换内容拉伸填满整个content box, 不保证保持原有的比例。
 2. contain: 中文释义“包含”。保持原有尺寸比例。保证替换内容尺寸一定可以在容器里面放得下。因此，此参数可能会在容器内留下空白。
 3. cover: 中文释义“覆盖”。保持原有尺寸比例。保证替换内容尺寸一定大于容器尺寸，宽度和高度至少有一个和容器一致。因此，此参数可能会让替换内容（如图片）部分区域不可见。
@@ -100,6 +110,7 @@ div {
 
 # object-position
 > 控制图片的显示位置
+
 ##### 默认值：50% 50%;(居中)
 
 ```
@@ -109,12 +120,15 @@ object-position: right 20px bottom 10px;
 object-position: calc(100% - 20px) calc(100% - 10px);
 ```
 
+
 [object-position/object-fit img sprites与数字翻动demo](http://www.zhangxinxu.com/study/201503/css3-object-position-object-fit-img-sprites.html)
 
 ---
 # contain 
 > 性能优化新属性
+
 ##### 属性：none | strict | layout | style | paint | size | contain
+
 ##### 属性值的解释：
 - none 无
 - layout 开启布局限制
@@ -123,7 +137,9 @@ object-position: calc(100% - 20px) calc(100% - 10px);
 - size 开启size限制
 - content 开启除了size外的所有限制
 - strict开启 layout, style 和 paint 三种限制组合
+
 ##### 使用场景：以将一个元素标志为和页面上其它元素是相对独立的元素；
+
 #####  栗子：
 ###### a.页面小饰件(widgets)
 通常在页面上添加第三方小饰件时，我们几乎对它们没有什么太多的控制，比如分享工具，它们可能会因为具有相当耗资源的布局、样式、渲染操作等大幅度的降低整个页面的执行效率。为了将它们同我们的网站隔离开来，使用 contain: strict; 将第三方的小饰件同页面上的其它内容隔离开来。
@@ -132,26 +148,30 @@ object-position: calc(100% - 20px) calc(100% - 10px);
 ###### c.计算容器尺寸
 我在文字开头提到过这个问题，使用 contain: strict; 可以 免去很多关于容器尺寸控制的问题。比如，子元素的内容会影响容器的大小，使用 contain 属性就可以避免这样的问题产生。
 
-###### *为什么浏览器不能自动的实现 contain 的功能*
+##### *为什么浏览器不能自动的实现 contain 的功能？？*
 浏览器已经尽可能的在页面下做了最大的优化，但每个浏览器引擎的实现方法并不尽相同。而 contain 属性可以提供一种标准的方式让开发人员告诉 浏览器 某些方面可以这样优化，哪些不能优化。
-###### *什么时候应该使用contain*
+##### *什么时候应该使用contain？？*
 如果你的页面很简单，没有复杂的DOM节点和小饰件(widgets)，那就没必要考虑使用这种CSS的contain技术。而如果你开发的页面非常复杂，那么，这个CSS的contain技术可以帮助你优化页面的性能。而对于第三方的小饰件，始终使用contain: strict;是很好的习惯，它可以保护你的页面不受它们的干扰而出现性能问题。
 
 ---
 # text-transform
 > 控制文本中的字母
+
 ##### 属性：none | capitalize（每个单词以大写字母开头） | uppercase(仅有大写字母) | lowercase（仅有小写字母） | inherit 
 
 ---
 # direction 
 > 定文本书写方向(个人理解和text-align:left/right;差不多)
+
 ##### 属性：ltr(靠左) | rtl(靠右) | inherit
 
 ---
 # position:sticky；
 > 表现类似position:relative和position:fixed的合体，在目标区域在屏幕中可见时，它的行为就像position:relative;而当页面滚动超出目标区域时，它的表现就像position:fixed，它会固定在目标位置。**有兼容性**。
+
 ##### 自己js实现：
 
+###### CSS
 ```
     .box{
         width: 100%;
@@ -168,7 +188,7 @@ object-position: calc(100% - 20px) calc(100% - 10px);
         height: 2000px;
     }
 ```
-
+###### HTML
 
 ```
 <p style="margin-bottom: 100px"></p>
@@ -176,7 +196,7 @@ object-position: calc(100% - 20px) calc(100% - 10px);
 <div class="bottom"></div>
 ```
 
-
+###### JS
 ```
 <script>
     var box=document.querySelector('.box');
@@ -205,7 +225,7 @@ column-width | 规定列的宽度。
 columns | 规定设置 column-width 和 column-count 的简写属性。
 
 
-====
+
 
 
 
