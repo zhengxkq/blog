@@ -2,6 +2,7 @@
 title:纯css实现自适应布局表格
 ---
 这种布局的特点是使用CSS媒体查询语句(@media screen and (...) )，能根据页面宽度，让页面布局自动做相应的调整，而不是采用传统的做法，几种不同的尺寸就做几个相适应的页面。
+###### CSS
 
 ```
  body {
@@ -59,7 +60,7 @@ title:纯css实现自适应布局表格
     }
 ```
 
-
+###### HTML
 ```
 <table>
     <thead>
@@ -86,6 +87,7 @@ title:纯css实现自适应布局表格
     </tbody>
 
 ```
-
+###### pc端效果
 ![pc端效果](https://raw.githubusercontent.com/zhangtingqian/img/master/2.png)
+###### 小于600px的屏效果（移动端）
 ![小于600px的屏效果](https://raw.githubusercontent.com/zhangtingqian/img/master/2-2.png)
