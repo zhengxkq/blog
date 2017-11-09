@@ -1,5 +1,8 @@
 ---
 title: css鲜为人知的属性
+date: {{date}}
+categories: 前端
+tags: 前端
 ---
 # pointer-events
 ##### 属性：auto | none | visiblepainted | visiblefill | visiblestroke | visible | painted | fill | stroke | all

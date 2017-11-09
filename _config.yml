@@ -72,11 +72,18 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: snippet
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: https://github.com/zhengxkq/zhengxkq.github.com.git
-  branch: master
+  - type: git
+    repo: https://github.com/zhengxkq/zhengxkq.github.com.git
+    branch: master
+  - type: ftpsync
+    host: 47.88.21.163
+    user: uyu3364540001
+    pass: zheng123456
+    remote: /htdocs
+    port: 21
+    verbose: false
