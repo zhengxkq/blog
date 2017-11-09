@@ -1,5 +1,8 @@
 ---
-title:Async/Await知识总结
+title: Async/Await知识总结
+date: {{date}}
+categories: 前端
+tags: 前端
 ---
 
 ### 基本规则

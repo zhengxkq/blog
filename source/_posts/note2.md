@@ -1,5 +1,8 @@
 ---
-title: [转]几道Promise的题
+title: 几道Promise的题(转)
+date: {{date}}
+categories: 前端
+tags: 前端
 ---
 
 以下 promise 均指代 Promise 实例，环境是 Node.js。通过题目学习知识点；
