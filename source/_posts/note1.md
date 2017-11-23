@@ -1,6 +1,6 @@
 ---
 title: 纯css实现自适应布局表格
-date: {{date}}
+date: 2016-11-23 11:09:43
 categories: 前端
 tags: 前端
 ---
